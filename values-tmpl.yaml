@@ -1,0 +1,16 @@
+configMap:
+  data:
+  # Set this variable to instruct the PDP to pull a specific policy from your Git repo using a commit SHA.
+# BUNDLE_COMMIT: 8ac6fb47bfdbbiicbec2ed07a0cc5641c754791b57
+  # The PDP log level. debug / error. Default is error.
+    PDP_LOG_LEVEL: error
+    CONTROL_PLANE_ADDR: https://api.poc.build.security/v1/api/pdp
+service:
+  # specify the type NodePort for localhost minikube, or ClusterIP for Kubernetes cluster namespace deployment
+  type:  
+  
+secret:
+  data:
+    # API key & secret used by the PDP to authenticate with the build.security control plane
+    API_KEY: 
+    API_SECRET: 

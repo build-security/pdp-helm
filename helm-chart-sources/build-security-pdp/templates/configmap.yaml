@@ -1,0 +1,11 @@
+{{- if .Values.configMap.data -}}
+{{- $fullname := include "build_security_pdp.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullname }}
+data:
+{{- range $name, $value := .Values.configMap.data }}
+  {{ $name }}: {{ $value | quote }}
+{{- end }}
+{{- end -}}
