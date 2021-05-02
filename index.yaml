@@ -3,12 +3,12 @@ entries:
   build-security-pdp:
   - apiVersion: v2
     appVersion: v0.3.6
-    created: "2021-04-21T14:05:10.185115+03:00"
+    created: "2021-05-02T13:19:41.116372+03:00"
     description: A Helm chart for deploying a build.security's PDP as a service
-    digest: 81b67a291cde62c709396deb794631219654a89a0760661908fd8b8f26bcbd06
+    digest: 05e287f3bc0a673a446832c1aed20ef834cb5aca19bb555dc9cad49fd876739c
     name: build-security-pdp
     type: application
     urls:
-    - https://build-security.github.io/pdp-helm/build-security-pdp-0.1.0.tgz
+    - https://build-security.github.io/pdp-helm/charts/build-security-pdp-0.1.0.tgz
     version: 0.1.0
-generated: "2021-04-21T14:05:10.184237+03:00"
+generated: "2021-05-02T13:19:41.115072+03:00"
