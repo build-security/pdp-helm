@@ -1,0 +1,32 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: build-security-pdp4
+  namespace: pdp-tenant-1
+spec:
+  values:
+    configMap:
+      data:
+        PDP_LOG_LEVEL: error
+        CONTROL_PLANE_ADDR: https://api.devops.build.security/v1/api/pdp
+      secret:
+        data:
+          # API key & secret used by the PDP to authenticate with the build.security control plane
+          API_KEY: test1
+          API_SECRET: test1
+      
+      ingress:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: nginx
+          nginx.ingress.kubernetes.io/rewrite-target: /$2
+        hosts:
+          - host: pdp-service.devops.build.security
+            paths:
+              - path: /pdp-tenant-1(/|$)(.*)
+      image:
+        tag: "latest"
+  chart:
+    repository: https://build-security.github.io/pdp-helm
+    name: build-security-pdp
+    version: 0.1.0

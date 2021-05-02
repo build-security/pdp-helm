@@ -1,0 +1,4 @@
+curl -s http://localhost:8080/apis/helm.fluxcd.io/v1/namespaces/<namespace>/helmreleases \
+-XPOST -H 'Content-Type: application/json' \
+-d@release.json \
+| jq 
